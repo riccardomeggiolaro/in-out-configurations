@@ -106,7 +106,7 @@
                             "weighing": {
                                 "cams": [],
                                 "report": {
-                                    "in": false,
+                                    "in": true,
                                     "out": true
                                 },
                                 "set_rele": [
@@ -128,7 +128,7 @@
                         "port_rele": null,
                         "printer_name": "EPSON-TM-T88VII",
                         "rele": {
-                            "1": 1
+                            "1": 0
                         },
                         "run": true,
                         "take_of_weight_before_weighing": false,
