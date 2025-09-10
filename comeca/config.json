@@ -35,8 +35,8 @@
         "weighers": {
             "1": {
                 "connection": {
-                    "baudrate": 9600,
-                    "serial_port_name": "/dev/ttyS0",
+                    "ip": "10.0.5.178",
+                    "port": 4001,
                     "timeout": 2.0
                 },
                 "nodes": {
@@ -126,7 +126,7 @@
                         "node": null,
                         "number_of_prints": 1,
                         "port_rele": null,
-                        "printer_name": "EPSON-TM-T88VII",
+                        "printer_name": "Epson-LX-300+",
                         "rele": {
                             "1": 0
                         },
