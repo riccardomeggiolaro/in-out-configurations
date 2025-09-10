@@ -3,79 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <style>
-        @page {
-            size: A4;
-            margin: 20mm;
-        }
         * {
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        body { font-family: Arial, sans-serif; }
-        .header { text-align: center; margin-bottom: 20px; }
-        .weight-data { margin: 20px; }
-        .vehicle-info { margin: 20px; }
-        .footer { text-align: center; margin-top: 20px; }
-        table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-        th, td { padding: 8px; border: 1px solid #ddd; }
+        
+        body { 
+            font-family: Arial, sans-serif; 
+            font-size: 8px;
+            line-height: 1.2;
+            padding: 2mm;
+            overflow: hidden;
+        }
+        
+        .logo {
+            width: 100%;
+        }
+        
+        .section {
+            margin-bottom: 1.5mm;
+            border: 1px solid #333;
+        }
+        
+        .section-header {
+            background-color: #e0e0e0;
+            padding: 1mm;
+            font-weight: bold;
+            font-size: 7px;
+            text-align: center;
+        }
+        
+        .data-row {
+            padding: 0.5mm 1mm;
+            border-bottom: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .data-row:last-child {
+            border-bottom: none;
+        }
+        
+        .label {
+            font-weight: bold;
+            min-width: 12mm;
+        }
+        
+        .value {
+            text-align: right;
+            flex: 1;
+            word-break: break-all;
+        }
+        
+        .weight-large {
+            font-size: 12px;
+            font-weight: bold;
+            text-align: center;
+            padding: 1mm;
+        }
+        
+        .weight-section {
+            display: flex;
+            gap: 1mm;
+        }
+        
+        .weight-col {
+            flex: 1;
+            border: 1px solid #333;
+        }
+        
+        .net-weight {
+            background-color: #f5f5f5;
+            border: 2px solid #333;
+            margin-top: 1mm;
+        }
+        
+        .compact-row {
+            font-size: 7px;
+            padding: 0.3mm 1mm;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 2mm;
+            }
+        }
     </style>
 </head>
 <body>
-    <img src="data:image/jpeg;base64,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">
+    <img class="logo" src="" alt="Logo">
 
-    <br>
-    <br>
-
-    <table>
-        <tr style="background-color: lightgray;">
-            <th colspan="2" style="text-align: left;">Dati</th>
-        </tr>
-        <tr>
-            <td>Targa: {{ vehicle.plate }}</td>
-            <td>Vettore: {{ vector.social_reason }}</td>
-        </tr>
-        <tr>
-            <td>Materiale: {{ material.description }}</td>
-            <td>{{ typeSubject|default('Cliente', true) }}: {{ subject.social_reason }}</td>
-        </tr>
-        <tr>
-            <td>Note: {{ note }}</td>
-            <td>Bolla: {{ document_reference }}</td>
-        </tr>
-    </table>
-
-    <br>
-
-    <table>
-        <tr style="background-color: lightgray;">
-            <th style="text-align: left;">Pesata in entrata</th>
-            <th style="text-align: left;">Pesata in uscita</th>
-        </tr>
-        <tr>
-            <td>Data ora: {{ weight1.date }}</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td>Pid: {{ weight1.pid }}</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold; font-size: larger;">{{ weight1.weight }} kg</td>
-            <td style="text-align: center; font-weight: bold; font-size: larger;"></td>
-        </tr>
-    </table>
-
-    <br>
-
-    <table>
-        <tr style="background-color: lightgrey;">
-            <th style="text-align: left;">Peso netto</th>
-        </tr>
-        <tr>
-            <td style="text-align: center; font-weight: bold; font-size: larger;"></td>
-        </tr>
-    </table>
+    <!-- Dati principali -->
+    <div class="section">
+        <div class="section-header">DATI</div>
+        <div class="data-row compact-row">
+            <span class="label">Targa:</span>
+            <span class="value">{{ vehicle.plate }}</span>
+        </div>
+        <div class="data-row compact-row">
+            <span class="label">Materiale:</span>
+            <span class="value">{{ material.description }}</span>
+        </div>
+        <div class="data-row compact-row">
+            <span class="label">Vettore:</span>
+            <span class="value">{{ vector.social_reason }}</span>
+        </div>
+        <div class="data-row compact-row">
+            <span class="label">{{ typeSubject|default('Cliente', true) }}:</span>
+            <span class="value">{{ subject.social_reason }}</span>
+        </div>
+        <div class="data-row compact-row">
+            <span class="label">Bolla:</span>
+            <span class="value">{{ document_reference }}</span>
+        </div>
+        <div class="data-row compact-row">
+            <span class="label">Note:</span>
+            <span class="value">{{ note }}</span>
+        </div>
+    </div>
+    
+    <!-- Pesate -->
+    <div class="weight-section">
+        <div class="weight-col">
+            <div class="section-header">ENTRATA</div>
+            <div class="compact-row">
+                <div>{{ weight1.date }}</div>
+            </div>
+            <div class="compact-row">
+                <div>PID: {{ weight1.pid }}</div>
+            </div>
+            <div class="weight-large">{{ weight1.weight }} kg</div>
+        </div>
+        
+        <div class="weight-col">
+            <div class="section-header">USCITA</div>
+            <div class="compact-row">
+                <div>&nbsp;</div>
+            </div>
+            <div class="compact-row">
+                <div>&nbsp;</div>
+            </div>
+            <div class="weight-large">&nbsp;</div>
+        </div>
+    </div>
+    
+    <!-- Peso netto -->
+    <div class="net-weight">
+        <div class="section-header">PESO NETTO</div>
+        <div class="weight-large">&nbsp;</div>
+    </div>
 </body>
 </html>
-
