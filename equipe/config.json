@@ -1,14 +1,15 @@
 {
     "app_api": {
         "panel": {},
+        "path_content": "static/content",
         "path_csv": "/var/lib/in-out/csv",
         "path_database": "/var/lib/in-out/database.db",
         "path_img": "/var/lib/in-out/images",
         "path_pdf": "/var/lib/in-out/pdf",
-        "path_report": "./applications/static/report",
+        "path_ui": "static/ui/default",
         "port": 80,
-        "report_in": "weight_in.html",
-        "report_out": "weight_out.html",
+        "report_in": "weight_in.json",
+        "report_out": "weight_out.json",
         "return_pdf_copy_after_weighing": false,
         "rfid": {
             "connection": {
@@ -29,6 +30,25 @@
             "ssh_port": 10022,
             "user": "root"
         },
+        "use_anagrafic": {
+            "document_reference": true,
+            "driver": true,
+            "material": true,
+            "note": true,
+            "operator": true,
+            "subject": true,
+            "vector": true,
+            "vehicle": true,
+            "weighing_pictures": true,
+            "weight1": {
+                "date": true,
+                "pid": true
+            },
+            "weight2": {
+                "date": true,
+                "pid": true
+            }
+        },
         "use_badge": false,
         "use_reservation": false,
         "use_white_list": false,
@@ -38,7 +58,7 @@
                     "connecting": false,
                     "ip": "10.0.5.96",
                     "port": 4001,
-                    "timeout": 2.0
+                    "timeout": 1.0
                 },
                 "nodes": {
                     "P1": {
@@ -57,6 +77,10 @@
                                     "id": null
                                 },
                                 "note": null,
+                                "operator": {
+                                    "description": null,
+                                    "id": null
+                                },
                                 "subject": {
                                     "cfpiva": null,
                                     "id": null,
@@ -85,7 +109,7 @@
                             "type": "MANUALLY"
                         },
                         "diagnostic_has_priority_than_realtime": true,
-                        "division": 20,
+                        "division": 1,
                         "events": {
                             "realtime": {
                                 "over_min": {
@@ -107,13 +131,13 @@
                         "maintaine_session_realtime_after_command": true,
                         "max_theshold": null,
                         "max_weight": 60000,
-                        "min_weight": 400,
+                        "min_weight": 200,
                         "need_take_of_weight_before_weighing": true,
                         "need_take_of_weight_on_startup": true,
                         "node": null,
                         "number_of_prints": 1,
                         "port_rele": null,
-                        "printer_name": null,
+                        "printer_name": "Canon_iR_ADV_C5235_5240",
                         "rele": {},
                         "run": true,
                         "take_of_weight_before_weighing": false,
