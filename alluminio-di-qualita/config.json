@@ -1,0 +1,312 @@
+{
+    "app_api": {
+        "mode": "MANUALLY",
+        "panel": {},
+        "path_content": "static/content",
+        "path_csv": "/var/lib/in-out/csv",
+        "path_database": "/var/lib/in-out/database.db",
+        "path_img": "/var/lib/in-out/images",
+        "path_pdf": "/var/lib/in-out/pdf",
+        "path_ui": "static/ui/adq",
+        "port": 80,
+        "report_in": "weight_in.json",
+        "report_out": "weight_out.json",
+        "return_pdf_copy_after_weighing": false,
+        "rfid": {
+            "connection": {
+                "baudrate": 9600,
+                "node": "01",
+                "serial_port_name": "/dev/ttyACM0",
+                "timeout": 1
+            },
+            "module": "rfidserialrfid",
+            "setup": {}
+        },
+        "siren": {},
+        "ssh_reverse_tunneling": {},
+        "sync_folder": {
+            "local_dir": "/var/lib/in-out",
+            "mount_point": "/mnt/sync-folder",
+            "remote_folder": null
+        },
+        "use_anagrafic": {
+            "document_reference": false,
+            "driver": false,
+            "material": true,
+            "note": true,
+            "operator": true,
+            "subject": false,
+            "vector": false,
+            "vehicle": false,
+            "weighing_pictures": false,
+            "weight1": {
+                "date": false,
+                "pid": false
+            },
+            "weight2": {
+                "date": true,
+                "pid": false
+            }
+        },
+        "use_badge": false,
+        "use_reservation": false,
+        "use_white_list": false,
+        "weighers": {
+            "1": {
+                "connection": {
+                    "connecting": false,
+                    "ip": "10.1.24.154",
+                    "port": 23,
+                    "timeout": 1.0
+                },
+                "nodes": {
+                    "P1": {
+                        "always_execute_realtime_in_undeground": true,
+                        "continuous_transmission": true,
+                        "diagnostic_has_priority_than_realtime": true,
+                        "division": 1,
+                        "events": {
+                            "realtime": {
+                                "over_min": {
+                                    "set_rele": []
+                                },
+                                "under_min": {
+                                    "set_rele": []
+                                }
+                            },
+                            "weighing": {
+                                "cams": [],
+                                "report": {
+                                    "in": false,
+                                    "out": true
+                                },
+                                "set_rele": []
+                            }
+                        },
+                        "maintaine_session_realtime_after_command": true,
+                        "max_theshold": null,
+                        "max_weight": 60000,
+                        "min_weight": 1,
+                        "need_take_of_weight_before_weighing": false,
+                        "need_take_of_weight_on_startup": false,
+                        "node": null,
+                        "number_of_prints": 1,
+                        "port_rele": null,
+                        "printer_name": "TSC_MB241_ETHERNET",
+                        "rele": {},
+                        "run": true,
+                        "take_of_weight_before_weighing": false,
+                        "take_of_weight_on_startup": false,
+                        "terminal": "dgt1"
+                    }
+                },
+                "time_between_actions": 0.3
+            },
+            "2": {
+                "connection": {
+                    "connecting": false,
+                    "ip": "10.1.24.155",
+                    "port": 23,
+                    "timeout": 1.0
+                },
+                "nodes": {
+                    "P2": {
+                        "always_execute_realtime_in_undeground": true,
+                        "continuous_transmission": true,
+                        "diagnostic_has_priority_than_realtime": true,
+                        "division": 1,
+                        "events": {
+                            "realtime": {
+                                "over_min": {
+                                    "set_rele": []
+                                },
+                                "under_min": {
+                                    "set_rele": []
+                                }
+                            },
+                            "weighing": {
+                                "cams": [],
+                                "report": {
+                                    "in": false,
+                                    "out": true
+                                },
+                                "set_rele": []
+                            }
+                        },
+                        "maintaine_session_realtime_after_command": true,
+                        "max_theshold": null,
+                        "max_weight": 60000,
+                        "min_weight": 1,
+                        "need_take_of_weight_before_weighing": false,
+                        "need_take_of_weight_on_startup": false,
+                        "node": null,
+                        "number_of_prints": 1,
+                        "port_rele": null,
+                        "printer_name": "TSC_MB241_ETHERNET",
+                        "rele": {},
+                        "run": true,
+                        "take_of_weight_before_weighing": false,
+                        "take_of_weight_on_startup": false,
+                        "terminal": "dgt1"
+                    }
+                },
+                "time_between_actions": 0.1
+            },
+            "3": {
+                "connection": {
+                    "connecting": false,
+                    "ip": "10.1.24.160",
+                    "port": 23,
+                    "timeout": 1.0
+                },
+                "nodes": {
+                    "P3": {
+                        "always_execute_realtime_in_undeground": true,
+                        "continuous_transmission": true,
+                        "diagnostic_has_priority_than_realtime": true,
+                        "division": 1,
+                        "events": {
+                            "realtime": {
+                                "over_min": {
+                                    "set_rele": []
+                                },
+                                "under_min": {
+                                    "set_rele": []
+                                }
+                            },
+                            "weighing": {
+                                "cams": [],
+                                "report": {
+                                    "in": false,
+                                    "out": true
+                                },
+                                "set_rele": []
+                            }
+                        },
+                        "maintaine_session_realtime_after_command": true,
+                        "max_theshold": null,
+                        "max_weight": 60000,
+                        "min_weight": 1,
+                        "need_take_of_weight_before_weighing": false,
+                        "need_take_of_weight_on_startup": false,
+                        "node": null,
+                        "number_of_prints": 1,
+                        "port_rele": null,
+                        "printer_name": "TSC_MB241_ETHERNET",
+                        "rele": {},
+                        "run": true,
+                        "take_of_weight_before_weighing": false,
+                        "take_of_weight_on_startup": false,
+                        "terminal": "dgt1"
+                    }
+                },
+                "time_between_actions": 0.1
+            },
+            "4": {
+                "connection": {
+                    "connecting": false,
+                    "ip": "10.1.24.161",
+                    "port": 23,
+                    "timeout": 1.0
+                },
+                "nodes": {
+                    "P4": {
+                        "always_execute_realtime_in_undeground": true,
+                        "continuous_transmission": true,
+                        "diagnostic_has_priority_than_realtime": true,
+                        "division": 1,
+                        "events": {
+                            "realtime": {
+                                "over_min": {
+                                    "set_rele": []
+                                },
+                                "under_min": {
+                                    "set_rele": []
+                                }
+                            },
+                            "weighing": {
+                                "cams": [],
+                                "report": {
+                                    "in": false,
+                                    "out": true
+                                },
+                                "set_rele": []
+                            }
+                        },
+                        "maintaine_session_realtime_after_command": true,
+                        "max_theshold": null,
+                        "max_weight": 60000,
+                        "min_weight": 1,
+                        "need_take_of_weight_before_weighing": false,
+                        "need_take_of_weight_on_startup": false,
+                        "node": null,
+                        "number_of_prints": 1,
+                        "port_rele": null,
+                        "printer_name": "TSC_MB241_ETHERNET",
+                        "rele": {},
+                        "run": true,
+                        "take_of_weight_before_weighing": false,
+                        "take_of_weight_on_startup": false,
+                        "terminal": "dgt1"
+                    }
+                },
+                "time_between_actions": 0.1
+            },
+            "5": {
+                "connection": {
+                    "connecting": false,
+                    "ip": "10.1.24.162",
+                    "port": 23,
+                    "timeout": 1.0
+                },
+                "nodes": {
+                    "P5": {
+                        "always_execute_realtime_in_undeground": true,
+                        "continuous_transmission": true,
+                        "diagnostic_has_priority_than_realtime": true,
+                        "division": 1,
+                        "events": {
+                            "realtime": {
+                                "over_min": {
+                                    "set_rele": []
+                                },
+                                "under_min": {
+                                    "set_rele": []
+                                }
+                            },
+                            "weighing": {
+                                "cams": [],
+                                "report": {
+                                    "in": false,
+                                    "out": true
+                                },
+                                "set_rele": []
+                            }
+                        },
+                        "maintaine_session_realtime_after_command": true,
+                        "max_theshold": null,
+                        "max_weight": 60000,
+                        "min_weight": 1,
+                        "need_take_of_weight_before_weighing": false,
+                        "need_take_of_weight_on_startup": false,
+                        "node": null,
+                        "number_of_prints": 1,
+                        "port_rele": null,
+                        "printer_name": "TSC_MB241_ETHERNET",
+                        "rele": {},
+                        "run": true,
+                        "take_of_weight_before_weighing": false,
+                        "take_of_weight_on_startup": false,
+                        "terminal": "dgt1"
+                    }
+                },
+                "time_between_actions": 0.1
+            }
+        }
+    },
+    "log": {
+        "max-size-mb": 10
+    },
+    "name": "in-out",
+    "secret_key": "$2b$12$PAHE4kh6lnXo3w9SF9tj7O"
+}

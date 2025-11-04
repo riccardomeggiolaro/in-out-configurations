@@ -1,0 +1,32 @@
+GATEWAY
+IP => 10.1.24.169
+
+username: root
+password: 318101
+
+username: baronpesi
+password: 318101
+
+SOFTWARE
+username: baronpesi
+password: 318101
+
+username: adq
+password: !adq2025
+
+PRINTER
+Printer IP => 10.1.24.170
+Size printer TSC_MB241 => 100x120 mm collate yes
+Printer Options => Darkness 15
+
+TERMINALS
+IP1 => 10.1.24.154
+IP2 => 10.1.24.155
+IP3 => 10.1.24.160
+IP4 => 10.1.24.161
+IP5 => 10.1.24.165
+
+PORT 0 (RS232) => 23
+Timeout => 1s
+
+Trasmissione continua con => ST,      50,kg
